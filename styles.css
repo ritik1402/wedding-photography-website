@@ -1,0 +1,277 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "EduCursive", cursive;
+}
+
+@font-face {
+  font-family: "EduCursive";
+  src: url(./fonts/Edu_NSW_ACT_Cursive/EduNSWACTCursive-VariableFont_wght.ttf)
+    format("truetype");
+}
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  color: #d3321d;
+  font-size: 26px;
+  font-family: "EduCursive";
+  letter-spacing: 3px;
+  font-weight: 600;
+  
+  
+  
+}
+.logo:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+    transition: all 0.3s ease-in-out;
+   
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: white;
+  font-family: "EduCursive";
+}
+
+.nav-links a{
+  color: white;
+
+}
+
+.nav-links a:hover{
+  color: #ffc107;
+
+}
+
+.nav-links li:hover {
+  color: #ffc107;
+    transform: scale(1.25);
+    transition: all 0.3s ease-in-out;
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #d3321d;
+  cursor: pointer;
+}
+
+
+.hero-section {
+  background-image: url("./images/wedding.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  animation: fadeOverlay 2s ease forwards;
+  z-index: 0;
+}
+
+@keyframes fadeOverlay {
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  /* display: flex; */
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 120px 20px;
+  text-align: center;
+  font-family: "EduCursive";
+  /* letter-spacing: 5px; */
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  margin-bottom: 50px;
+  letter-spacing: 12px;
+}
+
+.hero-services {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 16px;
+  font-family: "Times New Roman";
+}
+
+.hero-services span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hamburger.open i::before {
+  content: "\f00d"; 
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+
+
+/* ===============================media queary ==========================================*/
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 50vw;
+    background-color: rgba(90, 88, 88, 0.95);/* light pink with transparency */
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s ease;
+    font-size: 20px;
+    z-index: 1000;
+    padding-top: 100px;
+    /* color: #ffc107; */
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li  {
+    margin: 20px 0;
+    color: rgb(250, 250, 250);
+    font-family: "EduCursive";
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+   
+  }
+ 
+
+
+
+ 
+
+  .nav-links a:hover {
+    color: #ffc107;
+    transform: scale(1.2);
+    text-decoration: underline;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    color: #d3321d;
+    cursor: pointer;
+    z-index: 1100;
+  }
+}
+
+.img-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 10px;
+ 
+  
+}
+
+.img-item{
+  width: calc(33% - 10px);
+  height: auto;
+  /* object-fit: cover; */
+
+}
+
+.img-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+
+  .img-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 10px;
+ 
+  
+}
+
+.img-item{
+  width: 100%;
+  height: auto;
+  /* object-fit: cover; */
+
+}
+
+.img-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+}
+
+.about-top{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+
+  
+}
+.about-title{
+  text-align: center;
+  font-family: 'EduCursive';
+  font-weight: 600;
+  font-size: 32px;
+  color: #d3321d;
+  padding: 20px;
+  margin: 20px;
+
+}
+#about {
+  background: #f8f9fa;
+}
+
+
+
